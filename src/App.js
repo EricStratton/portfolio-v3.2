@@ -1,11 +1,11 @@
-import './App.css';
+import Preloader from './components/preloader';
 
 function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+   return (
+      <div className="App">
+         <Preloader />
+      </div>
+   );
 }
 
 export default App;
