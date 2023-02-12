@@ -17,8 +17,8 @@ const LinkWrapper = ({ link, parentFinished, children, encodeKey = 156 }) => {
          tlRef.current.fromTo(
             '.underline',
             {
-               width: '0%',
-               left: '0%',
+               width: '0',
+               left: '0',
             },
             {
                width: '100%',
@@ -30,10 +30,10 @@ const LinkWrapper = ({ link, parentFinished, children, encodeKey = 156 }) => {
             '.underline',
             {
                width: '100%',
-               left: '0%',
+               left: '0',
             },
             {
-               width: '0%',
+               width: '0',
                left: '100%',
                duration: 1,
                immediateRender: false,
@@ -79,6 +79,7 @@ const linkCSS = css({
    '&:link, &:visited, &:hover, &:active': {
       color: 'black',
    },
+   position: 'relative'
 });
 
 const underlineCSS = mQ({
@@ -88,7 +89,7 @@ const underlineCSS = mQ({
    left: '0',
    right: '0',
    width: '0',
-   height: ['1.5px', '2px', '2.5px', '3px'],
+   height: ['1px', '1.5px', '2px', '2.5px'],
    backgroundColor: 'black',
 });
 

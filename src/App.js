@@ -7,7 +7,7 @@ function App() {
 
    return (
       <div className="App">
-         {width > 699 && <Cursor />}
+         {width > 768 && <Cursor />}
          <Preloader />
       </div>
    );

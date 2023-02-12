@@ -45,38 +45,40 @@ const Preloader = () => {
    return (
       <div ref={ctxRef} css={bgCSS}>
          <div className="wrapper" css={wrapperCSS}>
-            <ClassNames>
-               {({ cx, css }) => (
-                  <h1
-                     className={cx(
-                        'name',
-                        css(nameCSS),
-                        windowSize.width < 376 &&
-                           css({
-                              display: 'flex',
-                              flexDirection: 'column',
-                           })
-                     )}
-                  >
-                     <SplitWord words="Eric Stratton" target="letter" />
-                  </h1>
-               )}
-            </ClassNames>
-            <ClassNames>
-               {({ cx, css }) => (
-                  <h2
-                     className={cx(
-                        'contact',
-                        css(contactCSS),
-                        windowSize.width < 376 && css({ top: '65%' })
-                     )}
-                  >
-                     <LinkWrapper link="mailto:strattonericj@gmail.com" parentFinished={finished}>
-                        <SplitWord words="Contact" target="letter" invert />
-                     </LinkWrapper>
-                  </h2>
-               )}
-            </ClassNames>
+            <div css={textWrapperCSS}>
+               <ClassNames>
+                  {({ cx, css }) => (
+                     <h1
+                        className={cx(
+                           'name',
+                           css(nameCSS),
+                           windowSize.width < 376 &&
+                              css({
+                                 display: 'flex',
+                                 flexDirection: 'column',
+                              })
+                        )}
+                     >
+                        <SplitWord words="Eric Stratton" target="letter" />
+                     </h1>
+                  )}
+               </ClassNames>
+               <ClassNames>
+                  {({ cx, css }) => (
+                     <h2
+                        className={cx(
+                           'contact',
+                           css(contactCSS),
+                           windowSize.width < 376 && css({ top: '65%' })
+                        )}
+                     >
+                        <LinkWrapper link="mailto:strattonericj@gmail.com" parentFinished={finished}>
+                           <SplitWord words="Contact" target="letter" invert />
+                        </LinkWrapper>
+                     </h2>
+                  )}
+               </ClassNames>
+            </div>
          </div>
       </div>
    );
@@ -94,24 +96,28 @@ const wrapperCSS = css({
    backgroundColor: '#f5f5dc',
 });
 
-const nameCSS = mQ({
+const textWrapperCSS = css({
+   display: 'flex',
+   flexDirection: 'column',
+   alignItems: 'center',
    position: 'fixed',
-   top: ['48%', '47%', '46%', '45%'],
    left: '50%',
+   top: '50%',
    transform: 'translate(-50%, -50%)',
+   whiteSpace: 'nowrap',
+   rowGap: '1rem'
+});
+
+const nameCSS = mQ({
    fontFamily: 'Belleza, serif',
-   fontSize: ['3rem', '5rem', '7rem', '9rem'],
-   width: 'max-content',
+   fontSize: ['3rem', '5rem', '6rem', '9rem'],
+   width: 'fit-content',
 });
 
 const contactCSS = mQ({
-   position: 'fixed',
-   top: ['58%', '57%', '56%', '55%'],
-   left: '50%',
-   transform: 'translate(-50%, -50%)',
    fontFamily: 'Federo, serif',
    fontSize: ['2rem', '3rem', '4rem', '5rem'],
-   width: 'max-content',
+   width: 'fit-content',
 });
 
 export default Preloader;
