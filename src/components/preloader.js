@@ -91,8 +91,8 @@ const bgCSS = css({
 
 const wrapperCSS = css({
    position: 'relative',
-   height: '100vh',
-   width: '100vw',
+   height: '100svh',
+   width: '100svw',
    backgroundColor: '#f5f5dc',
 });
 
